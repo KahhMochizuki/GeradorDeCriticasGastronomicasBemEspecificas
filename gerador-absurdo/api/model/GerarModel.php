@@ -1,5 +1,5 @@
 <?php
-class GerarModel {
+class gerarModel {
     private $sujeitos = [
         "O Risoto de Cogumelos",
         "O Hot Dog do Calabouço",

@@ -2,11 +2,11 @@
 function atualizarFraseFinal() {
     const sujeito = document.getElementById('texto-sujeito').textContent;
     const descricao = document.getElementById('texto-descricao').textContent;
-    const acaoTextura = document.getElementById('texto-acao-textura').textContent;
+    const acaoTextura = document.getElementById('texto-acaoTextura').textContent;
 
     if (sujeito && descricao && acaoTextura) {
         document.getElementById('frase-completa').innerText = 
-            `"${sujeito} foi ${descricao}. ${acaoTextura}."`;
+            `${sujeito} foi ${descricao} . ${acaoTextura}`;
     }
 }
 
@@ -19,7 +19,7 @@ document.getElementById('btnGerarTudo').addEventListener('click', () => {
 
             document.getElementById('texto-sujeito').textContent = data.sujeito;
             document.getElementById('texto-descricao').textContent = data.descricao;
-            document.getElementById('texto-acao-textura').textContent = data.acao_textura;
+            document.getElementById('texto-acaoTextura').textContent = data.acaoTextura;
 
             atualizarFraseFinal();
         })
@@ -28,7 +28,7 @@ document.getElementById('btnGerarTudo').addEventListener('click', () => {
 
 // Resorteador das partes específicas
 function resortearParte(nomeParte) {
-    const elSpan = document.getElementById(`texto-${nomeParte.replace('_', '-')}`);
+    const elSpan = document.getElementById(`texto-${nomeParte}`);
     elSpan.textContent = "Sorteando... 🎲";
 
     fetch(`api/controller/controller.php?parte=${nomeParte}`)

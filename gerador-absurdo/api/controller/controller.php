@@ -2,7 +2,7 @@
 header('Content-Type: application/json; charset=utf-8');
 require_once '../model/GerarModel.php';
 
-$model = new GerarModel();
+$model = new gerarModel();
 $parte = isset($_GET['parte']) ? $_GET['parte'] : null;
 
 $resposta = [
